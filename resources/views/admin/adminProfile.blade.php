@@ -18,7 +18,8 @@
 
                                     <div class="col-4">
                                         <div>
-                                            <img class="card-img-top img-fluid" src="{{asset('backend/assets/images/small/img-5.jpg')}} " alt="John Doe" />
+                                            <img class="card-img-top img-fluid" src="{{
+                                                (!empty(Auth::user()->image))? url('upload/admin_images/'.Auth::user()->image) : url('upload/no_image.jpg')}} " alt="John Doe" />
                                         </div>
                                         <div class="row ">
                                             <div class="row">

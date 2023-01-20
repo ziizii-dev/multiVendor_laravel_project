@@ -68,6 +68,32 @@
 
 
 </details>
+<details>
+
+<summary>
+  19.1.2023
+</summary>
+
+ ## Learning
+
+    -laravel project_setup with UI
+    -validation
+    -profile update
+    -profile edit
+    -error message
+    
+
+
+    
+
+ 
+
+## project
+
+
+</details>
+
+
 
 
 
