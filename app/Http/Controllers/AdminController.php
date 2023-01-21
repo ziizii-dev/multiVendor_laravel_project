@@ -16,8 +16,12 @@ class AdminController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+        $notification = array(
+            'message'=>"Admin Profile Logout",
+            'alert-type'=>'success'
+        );
 
-        return redirect('/login');
+        return redirect('/login')->with($notification);
     }
     //Admin profile
     public function adminProfile(){
@@ -70,6 +74,14 @@ class AdminController extends Controller
         //    User::where('id',Auth::user()->id)->update($data);
         // return redirect()->route('admin#profile');
     }
+    //change password
+    public function changePassword(){
+        return view('admin.admin_change_password');
+    }
+    //update password
+    public function updatePassword(Request $request){
+        return view('admin');
+    }
 
       //account validation check
     private function accountValidationCheck($request){
@@ -80,5 +92,6 @@ class AdminController extends Controller
             'image' => 'mimes:jpeg,jpg,png,webp,gif'
         ])->Validate();
      }
+
 }
 // return redirect()->route('admin#details')->with(['updateSuccess'=>'Admin account updated']);

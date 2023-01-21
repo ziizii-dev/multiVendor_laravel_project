@@ -92,6 +92,25 @@
 
 
 </details>
+<details>
+
+<summary>
+  20.1.2023
+</summary>
+
+ ## Learning
+
+    
+    -password change page
+    -alert box and validation in login 
+
+
+## project
+
+-react project with laravel api
+
+
+</details>
 
 
 

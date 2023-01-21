@@ -38,6 +38,8 @@ Route::controller(AdminController::class)->group(function(){
         Route::get('/profile','adminProfile')->name('admin#profile');
         Route::get('/editProfile','editProfile')->name('admin#editProfile');
         Route::post('/updateProfile','updateProfile')->name('admin#updateProfile');
+        Route::get('/changePassword','changePassword')->name('admin#changePassword');
+        Route::post('/updatePassword','updatePassword')->name('admin#updatePassword');
     });
 
 
