@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -80,7 +81,22 @@ class AdminController extends Controller
     }
     //update password
     public function updatePassword(Request $request){
-        return view('admin');
+        $this->passwordValidationCheck($request);
+        $hasedPassword = Auth::user()->password;
+        if(Hash::check($request->password,$hasedPassword)){
+           $users = User::find(Auth::id());
+           $users->password = bcrypt($request->newPassword);
+           $users->save();
+
+        //    session()->flash('message','Password Updated Successfully');
+
+        }
+        $notification = array(
+            'message'=>"Password Updated Successfully",
+            'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
+
     }
 
       //account validation check
@@ -90,6 +106,15 @@ class AdminController extends Controller
             'username'=>'required',
             'email'=>'required',
             'image' => 'mimes:jpeg,jpg,png,webp,gif'
+        ])->Validate();
+     }
+
+     private function passwordValidationCheck($request){
+        Validator::make($request->all(),[
+            'password'=>'required',
+            'newPassword'=>'required',
+            'confirmPassword'=>'required|same:newPassword',
+
         ])->Validate();
      }
 

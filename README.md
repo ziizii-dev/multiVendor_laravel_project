@@ -111,6 +111,27 @@
 
 
 </details>
+<details>
+
+<summary>
+  23.1.2023
+</summary>
+
+ ## Learning
+
+    -Backend Home Page Slider Option Part I
+    -Backend Home Page Slider Option Part II
+    -home slide deshboard
+    -update home slide data
+
+ 
+
+## project
+  
+   -laravel & react project
+
+
+</details>
 
 
 

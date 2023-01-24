@@ -104,7 +104,7 @@
 
     </div>
 </div>
-<script type="text/javascript">
+{{-- <script type="text/javascript">
 
 $(document).ready(function(){
     $('#image').change(function(run){
@@ -117,6 +117,6 @@ $(document).ready(function(){
     });
 });
 
-</script>
+</script> --}}
 
 @endsection
