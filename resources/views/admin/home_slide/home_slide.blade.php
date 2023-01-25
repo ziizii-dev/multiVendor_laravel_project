@@ -18,20 +18,6 @@
                             <div class="col-4 offset-1">
 
 
-                                        {{-- @if (Auth::user()->image == null)
-                                        @if (Auth::user()->gender == 'male')
-                                        <img src="{{asset('image/default_user.png')}} " class="img-thumbnail shadow-sm" >
-
-                                        @else
-                                        <img src="{{asset('image/female_default.jpg')}} " class="img-thumbnail shadow-sm" >
-
-                                        @endif
-
-
-                                    @else
-                                        <img src="{{ asset('storage/'.Auth::user()->image) }} " class="img-thumbnail shadow-sm" />
-                                    @endif --}}
-                                    {{-- <img src="{{ asset('storage/'.Auth::user()->image) }} " class="img-thumbnail shadow-sm" /> --}}
                                     <input type="hidden" name="id" value="{{$homeslide->id}} ">
 
                                     <div>

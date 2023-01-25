@@ -132,6 +132,28 @@
 
 
 </details>
+<details>
+
+<summary>
+  24.1.2023
+</summary>
+
+ ## Learning
+
+    -Backend Home Page Slider Option Part 3
+    -Frontend Home Page Slider
+    -Backend About Page Setup Part 1
+    - Backend About Page Setup Part 2
+    - Frontend About Page Show Data Part 1
+
+ 
+
+## project
+  
+   -laravel & react project api 
+
+
+</details>
 
 
 

@@ -69,7 +69,7 @@ public function updateSlider(Request $request){
             $data['home_slide']=$fileName;
         }
         $data->save();
-        // dd($data->toArray());
+        dd($data->toArray());
         $notification = array(
             'message'=>"Admin Profile Updated Successfully",
             'alert-type'=>'success'
