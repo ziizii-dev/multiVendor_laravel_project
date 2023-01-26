@@ -21,7 +21,7 @@
                                     <input type="hidden" name="id" value="{{$homeslide->id}} ">
 
                                     <div>
-                                        <img class="card-img-top img-fluid" id="showImage" src="{{
+                                        <img  class="card-img-top img-fluid" id="showImage" src="{{
                                             (!empty($homeslide->home_slide))? url('upload/home_slide/'.$homeslide->home_slide) : url('upload/no_image.jpg')}} " />
                                     </div>
                                     <div class="mt-3">

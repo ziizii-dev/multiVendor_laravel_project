@@ -64,6 +64,12 @@ Route::controller(AboutController::class)->group(function(){
     Route::prefix('about')->group(function(){
         Route::get('/page','aboutPage')->name('about#page');
         Route::post('/update','updateAbout')->name('update#about');
+        Route::get('/about','homeAbout')->name('home#about');
+        Route::get('/multi/image','aboutMultiImage')->name('about#multiImage');
+        Route::post('/store/multi/image','storeMultiImage')->name('store#multiImage');
+        Route::get('/all/multi/image','allMultiImage')->name('all#multiImage');
+        Route::get('/edit/multi/image/{id}','editMultiImage')->name('edit#multiImage');
+        Route::post('/update/multi/image','updateMultiImage')->name('update#multiImage');
 
 
     });
