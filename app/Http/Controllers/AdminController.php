@@ -27,7 +27,10 @@ class AdminController extends Controller
     //Admin profile
     public function adminProfile(){
 
-     $data = User::where('id',Auth::user()->id)->first();
+    //  $data = User::where('id',Auth::user()?->id)->first();
+    //  dd($data->toArray());
+    $data =User::find(Auth::user()->id);
+    //  dd($data->toArray());
        return view('admin.adminProfile',compact('data'));
     }
     //Edit Profile

@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('multi_images', function (Blueprint $table) {
+        Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
-            $table->string('multi_image')->nullable();
-            $table->integer('status')->nullable();
+            $table->string('portfolio_name')->nullable();
+            $table->string('portfolio_title')->nullable();
+            $table->string('portfolio_image')->nullable();
+            $table->text('portfolio_description')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('multi_images');
+        Schema::dropIfExists('portfolios');
     }
 };

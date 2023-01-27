@@ -177,6 +177,32 @@
 
 </details>
 
+<details>
+
+<summary>
+  26.1.2023
+</summary>
+
+ ## Learning
+
+    - Backend Add Multi Image in About Page Part 4
+    - Backend Add Multi Image in About Page Part 5
+    -Frontend Show Multi Image
+    - Backend Portfolio Page Setup Part 1
+    -Backend Portfolio Page Setup Part 2  
+    
+## Error 
+- image not show at forntend error in home_about.blade (at 58)
+- image not show error at forntend in portfolio_all.blade (at 59)
+ 
+
+## project
+  
+   -laravel & react project api 
+
+
+</details>
+
 
 
 

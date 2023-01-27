@@ -1,4 +1,10 @@
 
+@php
+// $data = App\Models\User::where('id',Auth::user()->id)->first();
+// $data =  App\Models\User::where('id',Auth::user()->id)->first();
+$data = App\Models\User::find(Auth::user()->id);
+@endphp
+
 <header id="page-topbar">
     <div class="navbar-header">
         <div class="d-flex">
@@ -128,9 +134,6 @@
                 </div>
             </div>
 
-            @php
-                $data = App\Models\User::where('id',Auth::user()->id)->first();
-            @endphp
 
 
             <div class="dropdown d-inline-block user-dropdown">

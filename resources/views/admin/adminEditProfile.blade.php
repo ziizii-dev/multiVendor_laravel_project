@@ -34,7 +34,7 @@
                                     {{-- <img src="{{ asset('storage/'.Auth::user()->image) }} " class="img-thumbnail shadow-sm" /> --}}
 
                                     <div>
-                                        <img class="card-img-top img-fluid" id="showImage" src="{{
+                                        <img style="width:200px; height:200px" class="card-img-top img-fluid" id="showImage" src="{{
                                             (!empty(Auth::user()->image))? url('upload/admin_images/'.Auth::user()->image) : url('upload/no_image.jpg')}} " />
                                     </div>
                                     <div class="mt-3">
@@ -104,7 +104,7 @@
 
     </div>
 </div>
-{{-- <script type="text/javascript">
+<script type="text/javascript">
 
 $(document).ready(function(){
     $('#image').change(function(run){
@@ -117,6 +117,6 @@ $(document).ready(function(){
     });
 });
 
-</script> --}}
+</script>
 
 @endsection

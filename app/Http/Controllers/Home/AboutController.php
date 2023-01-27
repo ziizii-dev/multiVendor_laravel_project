@@ -117,7 +117,8 @@ class AboutController extends Controller
 
     //all multi image
     public function allMultiImage(){
-         $allMultiImage = MultiImage::all();
+         $allMultiImage = MultiImage::where("status",1)->get();
+        //  dd($allMultiImage->toArray());
         //  $allMultiImage->appends(request()->all());
          return view('admin.about_page.all_multiimage',compact('allMultiImage'));
     }
@@ -126,36 +127,62 @@ class AboutController extends Controller
        $multiImage = MultiImage::findOrFail($id);
     //    dd($multiImage->toArray());
        return view('admin.about_page.edit_multi_image',compact('multiImage'));
-    }
+    } //End Method
           //update multi imagee
-          public function updateMultiImage(Request $request){
-
-            $data = About::where('id',$request->id)->first();
-            // dd($data->toArray());
-
-            $data ->title = $request->title;
-            $data ->short_title = $request->short_title;
-            $data ->short_description = $request->short_description;
-            $data ->long_description = $request->long_description;
-            $data ->about_image = $request->about_image;
-
+     public function updateMultiImage(Request $request){
+            //   dd($request->toArray());
+                   $multi_image_id = $request->id;
+                //    dd($multi_image_id);
             if($request->file('multi_image')){
-                $file = $request->file('multi_image');
-                $fileName = uniqid(). $request->file('multi_image')->getClientOriginalName();
-                // dd ($fileName);
-                $file->move(public_path('upload/home_about'),$fileName);
-                $data['multi_image']=$fileName;
-            }
-            $data->save();
+                $image = $request->file('multi_image');
+                //  return $image;
+                $name_gen = hexdec(uniqid()).''.$image->getClientOriginalName();
+                // dd($name_gen);
 
-            // dd($data->toArray());
+                $image->move(public_path('upload/multi'),$name_gen);
+
+                MultiImage::findOrFail($multi_image_id)->update([
+                           "multi_image"=> $name_gen
+                ]);
+
+            }
 
             $notification = array(
-                'message'=>"About Slide Updated Successfully",
+                'message'=>"Multi Image Updated Successfully",
                 'alert-type'=>'success'
             );
             // dd($notification);
-            return redirect()->back()->with($notification);
+            return redirect()->route("all#multiImage")->with($notification);
+          }//End Method
+
+          //delete multi image
+          public function deleteMultiImage($id){
+                       $data = MultiImage::findOrFail($id);
+                    //    dd($data->toArray());
+                       $image = $data->multi_image;
+                     if(isset($data)){
+                        $data->status =0;
+                        $notification = array(
+                            'message'=>"Multi Image Delted Successfully",
+                            'alert-type'=>'success'
+                        );
+                        if($data->save()){
+                            // MultiImage::findOrFail($id)->delete();
+                            return redirect()->back()->with($notification);
+                        }
+                     }
+
+                    //    dd($image);
+                    // unlink($image);
+                    // MultiImage::findOrFail($id)->delete();
+
+                    // status->0;
+                    // $notification = array(
+                        // 'message'=>"Multi Image Delted Successfully",
+                        // 'alert-type'=>'success'
+                    // );
+                    // dd($notification);
+                    // return redirect()->back()->with($notification);
           }//End Method
     //   private function imageValidation($request){
     //     Validator::make($request->all(),[

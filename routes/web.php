@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\HomeSliderController;
 
 
@@ -70,6 +71,21 @@ Route::controller(AboutController::class)->group(function(){
         Route::get('/all/multi/image','allMultiImage')->name('all#multiImage');
         Route::get('/edit/multi/image/{id}','editMultiImage')->name('edit#multiImage');
         Route::post('/update/multi/image','updateMultiImage')->name('update#multiImage');
+        Route::get('/delete/multi/image/{id}','deleteMultiImage')->name('delete#multiImage');
+
+
+    });
+
+
+});
+//Portfolio  Page
+Route::controller(PortfolioController::class)->group(function(){
+    Route::prefix('portfolio')->group(function(){
+        Route::get('/all','allPortfolio')->name('all#portfolio');
+        Route::get('/add','addPortfolio')->name('add#portfolio');
+        Route::post('/store','storePortfolio')->name('store#portfolio');
+
+
 
 
     });
