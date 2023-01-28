@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
         $this->loginValidationCheck($request);
         $notification = array(
-            'message'=>"Admin Profile Updated Successfully",
+            'message'=>"Admin Profile Login Successfully",
             'alert-type'=>'success'
         );
         return redirect()->intended(RouteServiceProvider::HOME)->with($notification);

@@ -203,7 +203,31 @@
 
 </details>
 
+<details>
 
+<summary>
+  27.1.2023
+</summary>
+
+ ## Learning
+    -Backend Portfolio Page Setup Part 5
+    - Backend Add Multi Image in About Page Part 5
+    - Frontend Portfolio Show Setup Part 1
+    -Frontend Portfolio Show Setup Part 2
+    - Backend Blog Category Setup Part 1
+    -Backend Blog Category Setup Part 2
+    -Backend Blog Category Setup Part 3 
+    
+## Error 
+
+ 
+
+## project
+  
+  
+
+
+</details>
 
 
 

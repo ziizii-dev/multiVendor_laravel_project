@@ -138,7 +138,6 @@ class AboutController extends Controller
                 //  return $image;
                 $name_gen = hexdec(uniqid()).''.$image->getClientOriginalName();
                 // dd($name_gen);
-
                 $image->move(public_path('upload/multi'),$name_gen);
 
                 MultiImage::findOrFail($multi_image_id)->update([
@@ -171,19 +170,8 @@ class AboutController extends Controller
                             return redirect()->back()->with($notification);
                         }
                      }
-
-                    //    dd($image);
-                    // unlink($image);
-                    // MultiImage::findOrFail($id)->delete();
-
-                    // status->0;
-                    // $notification = array(
-                        // 'message'=>"Multi Image Delted Successfully",
-                        // 'alert-type'=>'success'
-                    // );
-                    // dd($notification);
-                    // return redirect()->back()->with($notification);
           }//End Method
+
     //   private function imageValidation($request){
     //     Validator::make($request->all(),[
     //         'multi_image'=>'mimes:jpeg,jpg,png,webp,gif'
