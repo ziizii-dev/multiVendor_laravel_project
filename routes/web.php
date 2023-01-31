@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Demo\DemoController;
+use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\HomeSliderController;
@@ -91,8 +92,6 @@ Route::controller(PortfolioController::class)->group(function(){
         Route::get('/details/{id}','detailPortfolio')->name('portfolio#details');
 
     });
-
-
 });
 //Portfolio  Page
 Route::controller(BlogCategoryController::class)->group(function(){
@@ -105,6 +104,15 @@ Route::controller(BlogCategoryController::class)->group(function(){
         Route::get('/delete/category/{id}','deleteBlogCategory')->name('delete#blogCategory');
 
     });
+});
+//Blog All  Page
+Route::controller(BlogController::class)->group(function(){
+        Route::get('/all/blog','allBlog')->name('all#blog');
+        Route::get('/blog','addBlog')->name('add#blog');
+        Route::post('store/blog','storeBlog')->name('store#blog');
+        Route::get('edit/blog/{id}','editBlog')->name('edit#blog');
+        Route::post('update/blog','updateBlog')->name('update#blog');
+        Route::get('/delete/blog/{id}','deleteBlog')->name('delete#blog');
 
 
 });

@@ -228,6 +228,31 @@
 
 
 </details>
+<details>
+
+<summary>
+  30.1.2023
+</summary>
+
+ ## Learning
+    -Backend Blog Page Setup Part 1
+    -Backend Blog Page Setup Part 2
+    -Backend Blog Page Setup Part 3
+    -Backend Blog Page Setup Part 4
+    -Backend Blog Page Setup Part 5
+    -Backend Blog Page Setup Part 6
+    -Backend Blog Page Setup Part 7
+    
+## Error 
+
+ 
+
+## project
+  
+  
+
+
+</details>
 
 
 

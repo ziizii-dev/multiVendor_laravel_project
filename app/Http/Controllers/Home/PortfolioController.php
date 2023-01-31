@@ -85,7 +85,7 @@ class PortfolioController extends Controller
       if(isset($portfolio)){
          $portfolio->status =0;
          $notification = array(
-             'message'=>"Portfolio Image Delted Successfully",
+             'message'=>"Portfolio Image Deleted Successfully",
              'alert-type'=>'success'
          );
          if($portfolio->save()){
@@ -114,5 +114,4 @@ class PortfolioController extends Controller
 
         ])->Validate();
      }
-
 }
