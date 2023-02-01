@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Http\Controllers\Home;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class ContactController extends Controller
+{
+    //contact page
+    public function contactMe(){
+        return view('frontend.contact');
+
+    }//End Method
+}

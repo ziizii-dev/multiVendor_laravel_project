@@ -12,7 +12,7 @@ class Blog extends Model
     use HasFactory,FillableTraits;
 protected $with = ['category'];
     public function category(){
-       return $this->belongsTo(BlogCategory::class,'blog_category_id','id');
+       return $this->belongsTo(BlogCategory::class,'blog_category_id','id')->where('status',1);
     }
 
 }

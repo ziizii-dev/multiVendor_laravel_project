@@ -6,6 +6,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\FooterController;
+use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\BlogCategoryController;
@@ -113,8 +115,25 @@ Route::controller(BlogController::class)->group(function(){
         Route::get('edit/blog/{id}','editBlog')->name('edit#blog');
         Route::post('update/blog','updateBlog')->name('update#blog');
         Route::get('/delete/blog/{id}','deleteBlog')->name('delete#blog');
+        Route::get('/details/blog/{id}','detailsBlog')->name('details#blog');
+        Route::get('/post/blog/{id}','postBlog')->name('category#post');
+        Route::get('/home/blog','homeBlog')->name('home#blog');
 
 
+});
+//Footer  Page
+Route::controller(FooterController::class)->group(function(){
+    Route::prefix('footer')->group(function(){
+        Route::get('/setup','footerSetup')->name('footer#setup');
+        Route::post('/update','updateFooter')->name('update#footer');
+    });
+});
+//Contact  Page
+Route::controller(ContactController::class)->group(function(){
+    Route::prefix('contact')->group(function(){
+        Route::get('/page','contactMe')->name('contact#me');
+
+    });
 });
 
 

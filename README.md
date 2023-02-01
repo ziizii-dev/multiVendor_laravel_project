@@ -253,6 +253,41 @@
 
 
 </details>
+<details>
+
+<summary>
+  31.1.2023
+</summary>
+
+ ## Learning
+    -Frontend Blog Show Setup Part 1
+    -Frontend Blog Show Setup Part 2
+    -Frontend Blog Show Setup Part 3
+    -Frontend Blog Show Setup Part 4
+    -Frontend Blog Show Setup Part 5
+    -Backend Footer Page Setup Part 1
+    -Backend Footer Page Setup Part 2
+    - Frontend Footer Show Setup
+    -Frontend Contact Form Setup Part 1
+    
+      
+    
+## Error 
+
+ 
+
+## project
+  
+  
+
+
+</details>
+
+
+
+
+
+
 
 
 

@@ -18,7 +18,7 @@ class BlogController extends Controller
         return view('admin.blogs.blog_all',compact('blogs'));
     }//End Method
     public function addBlog(){
-        $categories = BlogCategory::orderBy('blog_category','ASC')->get();
+        $categories = BlogCategory::where('status',1)->orderBy('blog_category','ASC')->get();
         return view('admin.blogs.blog_add',compact('categories'));
     }//End Method
 
@@ -50,7 +50,7 @@ class BlogController extends Controller
      //Edit Blog
      public function editBlog($id){
                $blogs = Blog::findOrFail($id);
-               $categories = BlogCategory::orderBy('blog_category','ASC')->get();
+               $categories = BlogCategory::where('status',1)->orderBy('blog_category','ASC')->get();
                return view('admin.blogs.blog_edit',compact('blogs','categories'));
      }//End Method
 
@@ -101,6 +101,29 @@ class BlogController extends Controller
          }
       }
 }//End Method
+
+//Details Blog
+public function detailsBlog($id){
+            $allBlogs = Blog::latest()->limit(5)->get();
+            $categories = BlogCategory::orderBy('blog_category','ASC')->get();
+             $blogs = Blog::findOrFail($id);
+             return view('frontend.blog_details',compact('blogs','allBlogs','categories'));
+}//End Method
+
+//Post Blog
+public function postBlog($id){
+    $blogpost = Blog::where('blog_category_id',$id)->orderBy('id','desc')->get();
+    $categories = BlogCategory::orderBy('blog_category','ASC')->get();
+    $allBlogs = Blog::latest()->limit(5)->get();
+    $categoryname = BlogCategory::findOrFail($id);
+    return view ('frontend.cat_blog_details',compact('blogpost','categories','allBlogs','categoryname'));
+}//End Method
+         //Home Blog
+         public function homeBlog(){
+                $allblogs = Blog::where('status',1)->latest()->get();
+                $categories = BlogCategory::orderBy('blog_category','ASC')->get();
+                return view('frontend.blog',compact('allblogs','categories'));
+         }
     //Valodation of StoreBlog
     private function blogValidationCheck($request){
         Validator::make($request->all(),[
