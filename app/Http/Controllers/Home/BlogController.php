@@ -120,7 +120,7 @@ public function postBlog($id){
 }//End Method
          //Home Blog
          public function homeBlog(){
-                $allblogs = Blog::where('status',1)->latest()->get();
+                $allblogs = Blog::where('status',1)->latest()->paginate(3);
                 $categories = BlogCategory::orderBy('blog_category','ASC')->get();
                 return view('frontend.blog',compact('allblogs','categories'));
          }

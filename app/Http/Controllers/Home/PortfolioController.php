@@ -101,6 +101,12 @@ class PortfolioController extends Controller
         return view('frontend.portfolio_details',compact('portfolio'));
        }//End Method
 
+       //Home Portfolio frontend
+       public function homePortfolio(){
+        $portfolio = Portfolio::where("status",1)->get();
+        return view('frontend.portfolio',compact('portfolio'));
+       }//End
+
        //Valodation of portfolio
        private function portfolioValidationCheck($request){
         Validator::make($request->all(),[

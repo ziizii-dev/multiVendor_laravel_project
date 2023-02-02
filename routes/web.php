@@ -25,9 +25,9 @@ use App\Http\Controllers\Home\BlogCategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
 
 
 Route::get('/dashboard', function () {
@@ -36,10 +36,13 @@ Route::get('/dashboard', function () {
 
 
 Route::controller(DemoController::class)->group(function(){
+    Route::get('/','homeMain')->name('home');
     Route::get('/about','Index')->name('about.page')->middleware('check');
     Route::get('/contact','ContactMethod')->name('contact.page');
 });
 
+
+Route::middleware(['auth'])->group(function () {
 //Admin all routes
 Route::controller(AdminController::class)->group(function(){
     Route::prefix('admin')->group(function(){
@@ -50,8 +53,7 @@ Route::controller(AdminController::class)->group(function(){
         Route::get('/changePassword','changePassword')->name('admin#changePassword');
         Route::post('/updatePassword','updatePassword')->name('admin#updatePassword');
     });
-
-
+});
 });
 
 //Home Slide Page
@@ -92,6 +94,7 @@ Route::controller(PortfolioController::class)->group(function(){
         Route::post('/update/portfolio/image','updatePortfolio')->name('update#portfolio');
         Route::get('/delete/portfolio/image/{id}','deletePortfolio')->name('delete#portfolio');
         Route::get('/details/{id}','detailPortfolio')->name('portfolio#details');
+        Route::get('/home','homePortfolio')->name('home#portfolio');
 
     });
 });
@@ -132,6 +135,10 @@ Route::controller(FooterController::class)->group(function(){
 Route::controller(ContactController::class)->group(function(){
     Route::prefix('contact')->group(function(){
         Route::get('/page','contactMe')->name('contact#me');
+        Route::post('/store/message','storeMessage')->name('store#message');
+        Route::get('/contact/message','contactMessage')->name('contact#message');
+        Route::get('/delete/message/{id}','deleteMessage')->name('delete#message');
+
 
     });
 });

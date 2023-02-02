@@ -65,6 +65,17 @@
                         <li><a href="{{route('add#blogCategory')}}">Add Blog Category</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-profile-line"></i>
+                        <span>Blog Page</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('all#blog') }}">All Blog</a></li>
+                        <li><a href="{{ route('add#blog') }}">Add Blog</a></li>
+
+                    </ul>
+                </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -73,7 +84,17 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('footer#setup')}}">Footer Setup</a></li>
-                       
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-profile-line"></i>
+                        <span>Contact Message</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('contact#message')}}">Contact Message</a></li>
+
                     </ul>
                 </li>
             </ul>

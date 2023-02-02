@@ -48,6 +48,7 @@ class AdminController extends Controller
         $data ->email = $request->email;
         if($request->file('image')){
             $file = $request->file('image');
+            @unlink(public_path('upload/admin_images/'.$data->image));
             $fileName = uniqid(). $request->file('image')->getClientOriginalName();
             // dd ($fileName);
             $file->move(public_path('upload/admin_images'),$fileName);

@@ -2,6 +2,9 @@
 
 @extends('frontend.main_master')
 @section('main')
+@section('title')
+Contact | EasyLearning Website
+@endsection
 
 <main>
 
@@ -45,26 +48,45 @@
     <!-- contact-area -->
     <div class="contact-area">
         <div class="container">
-            <form action="#" class="contact__form">
+            <form action="{{route('store#message')}} " class="contact__form" method="post">
+                @csrf
                 <div class="row">
                     <div class="col-md-6">
-                        <input name="email" class="form-control @error('blog_title') is-invalid
+                    <input name="name" class="form-control @error('name') is-invalid
                         @enderror " type="text" placeholder="Enter your name*">
-                        @error('blog_title')
+                        @error('name')
                          <div class="invalid-feedback">
                           {{$message}}
                          </div>
                      @enderror
                     </div>
                     <div class="col-md-6">
-                        <input type="email" placeholder="Enter your mail*">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" placeholder="Enter your subject*">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" placeholder="Your Budget*">
-                    </div>
+                        <input name="email" class="form-control @error('email') is-invalid
+                            @enderror " type="text" placeholder="Enter your email*">
+                            @error('email')
+                             <div class="invalid-feedback">
+                              {{$message}}
+                             </div>
+                         @enderror
+                   </div>
+                   <div class="col-md-6">
+                    <input name="subject" class="form-control @error('subject') is-invalid
+                        @enderror " type="text" placeholder="Enter your subject*">
+                        @error('subject')
+                         <div class="invalid-feedback">
+                          {{$message}}
+                         </div>
+                     @enderror
+               </div>
+               <div class="col-md-6">
+                <input name="phone" class="form-control @error('phone') is-invalid
+                    @enderror"type="text" placeholder="Enter your phone*">
+                    @error('phone')
+                     <div class="invalid-feedback">
+                      {{$message}}
+                     </div>
+                 @enderror
+           </div>
                 </div>
                 <textarea name="message" id="message" placeholder="Enter your massage*"></textarea>
                 <button type="submit" class="btn">send massage</button>
