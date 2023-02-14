@@ -52,7 +52,7 @@ class BlogCategoryController extends Controller
     //Delect Category Blog
     public function deleteBlogCategory($id){
              $blogcategory = BlogCategory::find($id);
-            //  dd($blogcategory->toArray());
+           
             if(isset($blogcategory)){
                 $blogcategory->status=0;
                 $notification = array(

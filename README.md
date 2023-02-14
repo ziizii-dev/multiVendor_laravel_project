@@ -282,6 +282,41 @@
 
 
 </details>
+<details>
+
+<summary>
+  1.2.2023
+</summary>
+
+ ## Learning
+    -Frontend Contact Form Setup Part 2
+    - Backend Contact Form Page Setup
+    -Update Routes in Menu Page
+    -Site Update Custom Title
+    -Update Frontend Active Link
+    -Middleware Groups In Route
+    -Form Validation With JavaScript Part 1
+    -Form Validation With JavaScript Part 2
+    -How to Use Key for Get Serial Number
+    -Add Custom Pagination Part 1
+    -Add Custom Pagination Part 2
+    -How to Back Up Laravel Project From
+    -Deploy Laravel 9 Project to Webserver and Remove Public Name from Url
+    -Project Introduction - What You Will Build
+    -Ecommerce Excise Files - Downloadable Resource
+    
+      
+    
+## Error 
+
+ 
+
+## project
+  
+  
+
+
+</details>
 
 
 
